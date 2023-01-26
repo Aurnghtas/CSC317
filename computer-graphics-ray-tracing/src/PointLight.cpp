@@ -1,0 +1,12 @@
+#include "PointLight.h"
+
+void PointLight::direction(
+  const Eigen::Vector3d & q, Eigen::Vector3d & d, double & max_t) const
+{
+  /* directional vector from q to p */
+  d = p - q;
+  
+  max_t = d.norm();
+
+  d = d.normalized();   // unit vector
+}
